@@ -29,16 +29,16 @@ inquirer
     .then((data) => {
         let myShape
         if (data.shape==='Circle'){
-            myShape = new Circle(data.shape,data.textColor,JSON.stringify(data.shapeColor),data.text)
+            myShape = new Circle(data.shape,data.textColor,data.shapeColor,data.text)
         }else if (data.shape==='Triangle'){
-            myShape = new Triangle(data.shape,data.textColor,JSON.stringify(data.shapeColor),data.text)
+            myShape = new Triangle(data.shape,data.textColor,data.shapeColor,data.text)
         }else if (data.shape==='Square'){
             myShape = new Square(data.shape,data.textColor,data.shapeColor,data.text)
         }
         const svg= 
         `<svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
         ${myShape.render()}
-        <text x="10" y="10">Hello World!</text>
+        ${myShape.renderText()}
         </svg>
         `
         fs.writeFile(__dirname+'/examples/samplelogo.svg', svg, (err) => {
