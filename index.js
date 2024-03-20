@@ -6,7 +6,7 @@ inquirer
     .prompt([
         {
             type: "input",
-            message: "What text you want on the image (up to three characters",
+            message: "What text you want on the image (up to three characters)",
             name: "text",
         },
         {
